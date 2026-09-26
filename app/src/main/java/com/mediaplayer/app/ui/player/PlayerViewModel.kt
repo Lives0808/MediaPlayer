@@ -497,7 +497,9 @@ class PlayerViewModel(
         val nearEnd = duration > 0L && position >= duration - tailThreshold(duration)
         val value = if (nearEnd) 0L else position
         savedPositions = savedPositions.toMutableMap().apply { this[item.id] = value }
-        viewModelScope.launch {
+        // onCleared() 触发时 viewModelScope 已被取消，强制保存必须交给应用级作用域才能落盘
+        val scope = if (force) container.appScope else viewModelScope
+        scope.launch {
             runCatching { container.playbackPositionStore.save(item.id, value) }
         }
     }
