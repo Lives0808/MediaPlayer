@@ -6,9 +6,21 @@
 
 ---
 
+## 下载安装
+
+👉 **[下载最新 APK](https://github.com/Lives0808/MediaPlayer/releases/latest)** ｜ 当前版本 [v1.0.0](https://github.com/Lives0808/MediaPlayer/releases/tag/v1.0.0)
+
+| 版本 | 大小 | SHA256 |
+| --- | --- | --- |
+| 1.0.0 | 3.0 MB | `72679bff80037fb880040bd35bdfd4ed0471e80b88b3ecc6d77a85ae85676681` |
+
+安装：下载 APK → 允许「安装未知来源应用」→ 安装后授予「访问视频」权限。
+
+---
+
 ## 当前状态
 
-- ✅ Debug APK（21 MB）与 Release APK（3.0 MB）均已构建成功
+- ✅ Release APK 已发布到 [GitHub Releases](https://github.com/Lives0808/MediaPlayer/releases)（已用正式证书签名 + R8 混淆）
 - ✅ Android Lint **0 Error**
 - ✅ 已在 Android 15（API 35）模拟器上实测通过，见下方「实测结果」
 
