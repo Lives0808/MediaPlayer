@@ -1,5 +1,7 @@
 package com.mediaplayer.app.util
 
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 import kotlin.math.abs
 
@@ -39,11 +41,14 @@ fun formatSize(bytes: Long): String {
     }
 }
 
+// SimpleDateFormat 的构造开销不小（解析 pattern、初始化 Calendar），而 formatDate 会在视频列表里逐项调用；
+// 缓存实例复用，SimpleDateFormat 不是线程安全的，格式化时加锁。
+private val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+
 /** 把秒级时间戳转成 yyyy-MM-dd */
 fun formatDate(seconds: Long): String {
     if (seconds <= 0L) return "未知"
-    val format = java.text.SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-    return format.format(java.util.Date(seconds * 1000))
+    return synchronized(dateFormat) { dateFormat.format(Date(seconds * 1000)) }
 }
 
 /** 倍速显示文案 */
