@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.content.Intent
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C
+import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.session.MediaSession
@@ -55,7 +56,12 @@ class PlaybackService : MediaSessionService() {
     /** 用户从最近任务划掉应用时：没有在播放就顺手结束服务 */
     override fun onTaskRemoved(rootIntent: Intent?) {
         val player = mediaSession?.player ?: return
-        if (!player.playWhenReady || player.mediaItemCount == 0) {
+        // 播放结束（STATE_ENDED）时 playWhenReady 仍可能是 true，也要结束服务，
+        // 否则划掉任务后前台服务会一直挂着
+        if (!player.playWhenReady ||
+            player.mediaItemCount == 0 ||
+            player.playbackState == Player.STATE_ENDED
+        ) {
             stopSelf()
         }
     }
