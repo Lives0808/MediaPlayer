@@ -1,5 +1,12 @@
 # MediaPlayer
 
+[![Release](https://img.shields.io/github/v/release/Lives0808/MediaPlayer?style=flat-square&color=6366F1&label=release)](https://github.com/Lives0808/MediaPlayer/releases)
+[![License](https://img.shields.io/github/license/Lives0808/MediaPlayer?style=flat-square&color=6366F1&label=license)](LICENSE)
+[![Android 7.0+](https://img.shields.io/badge/Android-7.0%2B-6366F1?style=flat-square&logo=android&logoColor=white)]
+[![Kotlin](https://img.shields.io/badge/Kotlin-6366F1?style=flat-square&logo=kotlin&logoColor=white)](https://kotlinlang.org)
+[![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-6366F1?style=flat-square&logo=jetpackcompose&logoColor=white)](https://developer.android.com/compose)
+[![Media3](https://img.shields.io/badge/Media3-6366F1?style=flat-square)](https://developer.android.com/media/media3)
+
 一个功能完整的 Android 本地视频播放器，使用 **Kotlin + Jetpack Compose + Media3 (ExoPlayer)** 实现。
 
 包名 `com.mediaplayer.app`，最低支持 Android 7.0（API 24），目标 Android 15（API 35）。
@@ -8,11 +15,11 @@
 
 ## 下载安装
 
-👉 **[下载最新 APK](https://github.com/Lives0808/MediaPlayer/releases/latest)** ｜ 当前版本 [v1.0.0](https://github.com/Lives0808/MediaPlayer/releases/tag/v1.0.0)
+👉 **[下载最新 APK](https://github.com/Lives0808/MediaPlayer/releases/latest)** ｜ 当前版本 [v1.0.1](https://github.com/Lives0808/MediaPlayer/releases/tag/v1.0.1)
 
 | 版本 | 大小 | SHA256 |
 | --- | --- | --- |
-| 1.0.0 | 3.0 MB | `72679bff80037fb880040bd35bdfd4ed0471e80b88b3ecc6d77a85ae85676681` |
+| 1.0.1 | 3.0 MB | `331255e212a145bef773227a86be6426fc4b089b77ee5cb81a8c9400d3220452` |
 
 安装：下载 APK → 允许「安装未知来源应用」→ 安装后授予「访问视频」权限。
 
